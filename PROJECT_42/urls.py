@@ -16,10 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,re_path
 from app.views import *
+from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',home.as_view(),name='home'),
+    path('home/',TemplateView.as_view(template_name='app/home.html'),name='home'),
     path('school_list/',school_list.as_view(),name='school_list'),
     path('get_url/<na>',get_url,name='get_url'),
-    re_path('(?P<pk>\d+)/',SchoolDetail.as_view(),name='detail'),
+    path('SchoolCreate/',SchoolCreate.as_view(),name='SchoolCreate'),
+
+
+    
+    re_path('^update/(?P<pk>\d+)/',SchoolUpdate.as_view(),name='SchoolUpdate'),
+    re_path('^delete/(?P<pk>\d+)/',SchoolDelete.as_view(),name='SchoolDelete'),
+    re_path('(?P<pk>\d+)/',SchoolDetail.as_view(),name='SchoolDetail'),
     ]

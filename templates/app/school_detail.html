@@ -17,5 +17,7 @@
         <h5>The age of the student is {{a.sage}}</h5>
     {% endfor %}
     
+    <h6><a href="{% url 'SchoolUpdate' pk=sclobj.pk %}" class="btn btn-primary" >Update</a></h6>
+    <h6><a href="{% url 'SchoolDelete' pk=sclobj.pk %}" class="btn btn-danger" >Delete</a></h6>
 </center>
 {% endblock %}

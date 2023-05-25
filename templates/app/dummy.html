@@ -10,14 +10,16 @@
 
     {% block title %}
       <title>helloworld</title>
+      
     {% endblock %}
   </head>
   <body>
 
-    <nav class="nav" style="background: linear-gradient(to right,red,yellow,green);" >
-        <a href="{% url 'admin:index' %}" class="nav-link">admin</a>
+    <nav class="nav three" style="background: linear-gradient(to right,red,yellow,green)">
+        <a href="{% url 'admin:index' %}" class="nav-link ">admin</a>
         <a href="{% url 'home' %}" class="nav-link">home</a>
         <a href="{% url 'school_list' %}" class="nav-link">school_list</a>
+        <a href="{% url 'SchoolCreate' %}" class="nav-link">SchoolCreate</a>
     </nav>
 
     {% block body_block %}
